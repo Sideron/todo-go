@@ -1,0 +1,39 @@
+body{
+    background-color: rgb(34, 42, 51);
+    color: white;
+    margin: 0;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 20px;
+  padding-right: 20px;
+  box-sizing: border-box; 
+}
+
+.taskCard{
+    list-style-type: none;
+    background-color: rgb(25, 29, 34);
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 15px;
+}
+
+.header {
+    background-color: rgb(25, 29, 34);
+    margin-top: 0;
+    padding-top: 5px;    /* Espacio interno arriba opcional para que respire */
+    padding-bottom: 5px;
+    margin-bottom: 20px;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between; /* Separa el título de la navegación */
+    align-items: center; /* Centra verticalmente los elementos */
+    padding-top: 15px;
+    padding-bottom: 15px;
+}

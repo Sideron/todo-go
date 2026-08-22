@@ -15,12 +15,14 @@
     <div class="container">
         <form>
             <p>Task Name:</p>
-            <input type="text">
+            <input type="text" id="inputName">
             <p>Description:</p>
-            <textarea></textarea>
+            <textarea id="inputDescription"></textarea>
         </form>
     <button onclick="window.location.href = '/'">Cancel</button>
-    <button onclick="window.location.href = '/'">Confirm</button>
+    <button onclick="submitTask()">Confirm</button>
     </div>
+
+    <script src="/js/addtask.js"></script>
 </body>
 </html>

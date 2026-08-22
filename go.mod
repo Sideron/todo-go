@@ -1,3 +1,3 @@
-module web1
+module todo-go
 
 go 1.26.6

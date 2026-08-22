@@ -1,6 +1,8 @@
 package main
 
-import "net/http"
+import (
+	"net/http"
+)
 
 func main() {
 	http.Handle("/style.css", http.FileServer(http.Dir("./public")))

@@ -4,10 +4,12 @@ class Task {
     constructor(name,description) {
         this.name = name;
         this.description = description;
+        this.checked = true
     }
     getHTMLtask() {
         return `<li class="taskCard">
             <h2>${this.name}</h2><p>${this.description}</p>
+            <input type="checkbox" id="compleated" name="compleated" value="${this.checked?"yes":"no"}">
         </li>`
     }
 }

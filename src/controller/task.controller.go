@@ -1,6 +1,9 @@
 package controller
 
-import "todo-go/src/models"
+import (
+	dtos "todo-go/src/DTOs"
+	"todo-go/src/models"
+)
 
 type TaskController struct {
 	tasks []*models.Task
@@ -15,17 +18,17 @@ func (c *TaskController) CompleteTask(name string) {
 	}
 }
 
-func (c *TaskController) Tasks() []models.Task {
-	nTasks := make([]models.Task, 0, len(c.tasks))
-	for i := range len(c.tasks) {
-		nTasks = append(nTasks, *c.tasks[i])
+func (c *TaskController) Tasks() []dtos.TaskDTO {
+	nTasks := make([]dtos.TaskDTO, 0, len(c.tasks))
+	for _, t := range c.tasks {
+		nTasks = append(nTasks, dtos.TaskToDTO(*t))
 	}
 	return nTasks
 }
 
 func (c *TaskController) CreateNewTask(name string, description string) {
-	for i := range len(c.tasks) {
-		if c.tasks[i].Name() == name {
+	for _, t := range c.tasks {
+		if t.Name() == name {
 			return
 		}
 	}

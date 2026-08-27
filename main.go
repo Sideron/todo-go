@@ -10,6 +10,7 @@ func main() {
 	taskController := &controller.TaskController{}
 	taskController.CreateNewTask("Task1", "This is the first task")
 	taskController.CreateNewTask("Task2", "This is the second task")
+	taskController.CreateNewTask("Another Task", "One more task")
 	http.Handle("/style.css", http.FileServer(http.Dir("./public")))
 	http.Handle("/js/", http.FileServer(http.Dir("./public")))
 

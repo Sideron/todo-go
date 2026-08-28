@@ -36,7 +36,7 @@ const getTasks = async () => {
         renderTasks(); 
 
     } catch (err) {
-        console.error('Fetch error:', error);
+        console.error('Fetch error:', err);
     }
 }
 

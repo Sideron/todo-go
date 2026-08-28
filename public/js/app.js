@@ -31,7 +31,7 @@ const getTasks = async () => {
 
         const tasksRetrived = await response.json()
         tasks = []
-        tasks = tasksRetrived.map(t => new Task(t.Name,t.Description,t.Completed))
+        tasks = tasksRetrived.map(t => new Task(t.name,t.description,t.completed))
 
         renderTasks(); 
 

@@ -24,11 +24,21 @@ func main() {
 	})
 
 	http.HandleFunc("/addtask", func(w http.ResponseWriter, r *http.Request) {
-		if r.Method == http.MethodGet {
+		switch r.Method {
+		case http.MethodGet:
 			http.ServeFile(w, r, "./public/addtask.html")
-		} else {
+		case http.MethodPost:
+			var nTask struct {
+				Name        string `json:"name"`
+				Description string `json:"description"`
+			}
+			if err := json.NewDecoder(r.Body).Decode(&nTask); err != nil {
+				http.Error(w, "Invalid JSON", http.StatusBadRequest)
+			}
+			taskController.CreateNewTask(nTask.Name, nTask.Description)
+		default:
 			w.WriteHeader(http.StatusMethodNotAllowed)
-			w.Write([]byte("Invalid method :( \nOnly GET method accepted"))
+			w.Write([]byte("Invalid method :("))
 		}
 	})
 
